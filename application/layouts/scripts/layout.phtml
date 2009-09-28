@@ -1,0 +1,22 @@
+<?php echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head profile="http://www.w3.org/2005/10/profile">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <?php echo $this->headTitle(); ?>
+        <?php $this->headLink()->appendStylesheet('/css/blueprint/screen.css', 'screen, projection'); ?>
+        <?php $this->headLink()->appendStylesheet('/css/blueprint/print.css', 'print'); ?>
+        <?php $this->headLink()->appendStylesheet('/css/blueprint/ie.css', 'screen, projection', 'lt IE 8'); ?>
+        <?php $this->headLink()->appendStylesheet('/css/main.css', 'screen, projection'); ?>
+        <?php echo $this->headLink(); ?>
+    </head>
+    <body>
+        <div id="container" class="container">
+            <div id="header" class="span-24 last">
+                <h1>Address Book</h1>
+            </div>
+            <div id="content" class="span-24 last">
+                <?php echo $this->layout()->content ?>
+            </div>
+        </div>
+    </body>
+</html>
