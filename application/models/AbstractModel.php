@@ -5,7 +5,7 @@
  */
 
 /**
- * An abstract model which provides methods for accessing arbitrary propeties
+ * An abstract model which provides methods for accessing arbitrary properties
  * and the data mapper. It also provides methods for finding and saving the
  * model. Subclasses simply need to define their properties and provide accessor
  * methods.
