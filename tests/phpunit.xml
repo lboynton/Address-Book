@@ -1,0 +1,5 @@
+<phpunit bootstrap="./application/bootstrap.php" colors="true">
+    <testsuite name="Address Book">
+        <directory>./</directory>
+    </testsuite>
+</phpunit>

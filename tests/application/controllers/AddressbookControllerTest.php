@@ -1,20 +1,8 @@
 <?php
 
-require_once 'PHPUnit/Framework/TestCase.php';
-
-class AddressbookControllerTest extends PHPUnit_Framework_TestCase
+class AddressbookControllerTest extends ControllerTestCase
 {
-
-    public function setUp()
+    public function testIndexAction()
     {
-        /* Setup Routine */
     }
-
-    public function tearDown()
-    {
-        /* Tear Down Routine */
-    }
-
-
 }
-
