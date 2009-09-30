@@ -46,7 +46,8 @@ class Default_Model_AddressBookMapper
         {
             unset($data['id']);
             $this->getDbTable()->insert($data);
-        } else
+        }
+        else
         {
             $this->getDbTable()->update($data, array('id = ?' => $id));
         }
@@ -67,7 +68,7 @@ class Default_Model_AddressBookMapper
     public function fetchAll()
     {
         $resultSet = $this->getDbTable()->fetchAll();
-        
+
         $entries   = array();
         foreach ($resultSet as $row)
         {
