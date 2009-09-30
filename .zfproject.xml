@@ -17,6 +17,7 @@
         </controllerFile>
         <controllerFile controllerName="contact">
           <actionMethod actionName="index"/>
+          <actionMethod actionName="add"/>
         </controllerFile>
       </controllersDirectory>
       <layoutsDirectory enabled="false"/>
@@ -35,6 +36,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="contact">
             <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="contact">
+            <viewScriptFile forActionName="add"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
