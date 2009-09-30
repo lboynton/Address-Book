@@ -24,7 +24,7 @@ class Default_Model_AddressBook
         $method = 'set' . $name;
         if (('mapper' == $name) || !method_exists($this, $method))
         {
-            throw new Exception('Invalid address book property');
+            throw new Exception('Invalid address book property: ' . $method);
         }
         $this->$method($value);
     }
@@ -34,7 +34,7 @@ class Default_Model_AddressBook
         $method = 'get' . $name;
         if (('mapper' == $name) || !method_exists($this, $method))
         {
-            throw new Exception('Invalid address book property');
+            throw new Exception('Invalid address book property: ' . $method);
         }
         return $this->$method();
     }
