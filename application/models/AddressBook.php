@@ -57,7 +57,6 @@ class Default_Model_AddressBook
     {
         $this->_id = (int) $id;
         return $this;
-
     }
 
     public function getId()
