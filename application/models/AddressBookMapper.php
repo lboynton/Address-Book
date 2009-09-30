@@ -39,9 +39,7 @@ class Default_Model_AddressBookMapper
     public function save(Default_Model_AddressBook $addressBook)
     {
         $data = array(
-            'email'   => $addressBook->getEmail(),
-            'comment' => $addressBook->getComment(),
-            'created' => date('Y-m-d H:i:s'),
+            'name'   => $addressBook->getName()
         );
 
         if (null === ($id = $addressBook->getId()))
