@@ -14,6 +14,17 @@
             <div id="header" class="span-24 last">
                 <h1>Address Book</h1>
             </div>
+            <div id="navigation" class="span-24 last">
+                <a href="<?php echo $this->url(
+                    array('controller'=>'index'),
+                    'default', true) ?>">View Contacts</a>
+                <a href="<?php echo $this->url(
+                    array('controller'=>'contact', 'action' => 'add'),
+                    'default', true) ?>">Add Contact</a>
+                <a href="<?php echo $this->url(
+                    array('controller'=>'addressbook', 'action' => 'add'),
+                    'default', true) ?>">Add Address Book</a>
+            </div>
             <div id="content" class="span-24 last">
                 <?php echo $this->layout()->content ?>
             </div>

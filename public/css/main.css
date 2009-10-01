@@ -1,8 +1,17 @@
-#boxes a
+body
 {
-    display:inline-block;
+    margin:50px 0;
+}
+#navigation
+{
+    margin:10px 0;
+}
+#navigation a
+{
     border:1px solid #000;
-    padding:200px 0;
-    font-size:x-large;
+    padding:10px;
+    font-size:large;
     text-align:center;
+    text-decoration:none;
+    margin:0 10px 0 0;
 }
