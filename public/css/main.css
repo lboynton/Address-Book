@@ -3,6 +3,33 @@ body
     margin:50px 0;
     font-size:small;
 }
+fieldset
+{
+    background:#EEE;
+    margin:20px 0;
+    border:0;
+    padding:10px;
+}
+legend
+{
+    display:none;
+}
+dt
+{
+    float: left;
+    clear: left;
+    margin:10px 15px 5px 5px;
+    width:150px;
+}
+dd
+{
+    display: block;
+}
+select
+{
+    width:312px;
+    padding:4px;
+}
 #navigation
 {
     margin:10px 0;
