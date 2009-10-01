@@ -72,7 +72,6 @@ class Default_Model_AddressBookMapper
         $entries   = array();
         foreach ($resultSet as $row)
         {
-
             $entry = new Default_Model_AddressBook();
             $entry->setId($row->id)
                 ->setName($row->name)
@@ -80,5 +79,41 @@ class Default_Model_AddressBookMapper
             $entries[] = $entry;
         }
         return $entries;
+    }
+
+    public function findContacts($id)
+    {
+        $result = $this->getDbTable()->find($id);
+        if (0 == count($result))
+        {
+            return array();
+        }
+        $row = $result->current();
+        $resultSet = $row->findDependentRowset('Default_Model_DbTable_Contacts');
+
+        $contacts = array();
+        foreach ($resultSet as $row)
+        {
+            $contact = new Default_Model_Contact();
+            
+            $contact->setId($row->id)
+                ->setAddressBookId($row->address_book_id)
+                ->setFirstName($row->first_name)
+                ->setLastName($row->last_name)
+                ->setAddress1($row->address_1)
+                ->setAddress2($row->address_2)
+                ->setCounty($row->county)
+                ->setCountry($row->country)
+                ->setPostCode($row->post_code)
+                ->setHomeTel($row->home_tel)
+                ->setWorkTel($row->work_tel)
+                ->setMobileTel($row->mobile_tel)
+                ->setFax($row->fax)
+                ->setEmail($row->email);
+
+            $contacts[] = $contact;
+        }
+
+        return $contacts;
     }
 }

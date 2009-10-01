@@ -12,4 +12,14 @@ class AddressbookController extends Zend_Controller_Action
         $addressBook = new Default_Model_AddressBook();
         $this->view->entries = $addressBook->fetchAll();
     }
+
+    public function viewAction()
+    {
+        $id = (int) $this->getRequest()->getParam('id');
+
+        $addressBook = new Default_Model_AddressBook();
+
+        $this->view->addressBook = $addressBook->find($id);
+        $this->view->contacts = $addressBook->getContacts($id);
+    }
 }
