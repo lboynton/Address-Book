@@ -50,8 +50,13 @@ select
 #addressBookSelector
 {
     position:absolute;
-    top:0;
+    top:50px;
     right:0;
+}
+#addressBookSelector *
+{
+    margin:0;
+    font-size:large;
 }
 #contacts
 {
