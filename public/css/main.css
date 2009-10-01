@@ -30,6 +30,10 @@ select
     width:312px;
     padding:4px;
 }
+#container
+{
+    position:relative;
+}
 #navigation
 {
     margin:10px 0;
@@ -43,18 +47,28 @@ select
     text-decoration:none;
     margin:0 10px 0 0;
 }
+#addressBookSelector
+{
+    position:absolute;
+    top:0;
+    right:0;
+}
 #contacts
 {
-    margin:20px 0 0 0;
+    margin:20px -10px 0 0;
 }
 .contact
 {
     border:1px solid #000;
     padding:10px;
-    height:150px;
-    width:150px;
+    height:158px;
+    width:160px;
     float:left;
     margin:0 10px 10px 0;
+}
+.contact:last
+{
+    margin-left:0;
 }
 .contact .name
 {

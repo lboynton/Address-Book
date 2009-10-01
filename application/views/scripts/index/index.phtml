@@ -1,14 +1,17 @@
-<?php
-$this->form->setAction($this->url());
-echo $this->form;
-?>
+<div id="addressBookSelector">
+    <?php
+    $this->form->setAction($this->url());
+    $this->form->setAttrib('class', 'inline');
+    echo $this->form;
+    ?>
+</div>
 
 <div id="contacts">
     <?php foreach ($this->contacts as $contact): ?>
     <div class="contact">
         <div class="name">
-            <?php echo $this->escape($contact->firstName) ?>
-            <?php echo $this->escape($contact->lastName) ?>
+                <?php echo $this->escape($contact->firstName) ?>
+                <?php echo $this->escape($contact->lastName) ?>
         </div>
         <div class="homeTel"><?php echo $this->escape($contact->homeTel) ?></div>
         <div class="workTel"><?php echo $this->escape($contact->workTel) ?></div>

@@ -20,12 +20,16 @@ class Default_Form_AddressBookSelector extends Zend_Form
 
         $this->addElement('select', 'addressbook', array(
             'multiOptions' => $addressBooks,
-            'label'      => 'Select address book'
+            'label'      => false
         ));
 
         $this->addElement('submit', 'submit', array(
             'ignore'   => true,
-            'label'    => 'View',
+            'label'    => 'View'
         ));
+
+        $this->getElement('addressbook')->removeDecorator('DtDdWrapper');
+        $this->getElement('submit')->removeDecorator('DtDdWrapper');
+
     }
 }
