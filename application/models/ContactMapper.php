@@ -39,17 +39,17 @@ class Default_Model_ContactMapper
     public function save(Default_Model_Contact $contact)
     {
         $data = array(
-            'addressBookId'   => $contact->getAddressBookId(),
-            'firstName' => $contact->getFirstName(),
-            'lastName' => $contact->getLastName(),
-            'address1' => $contact->getAddress1(),
-            'address2' => $contact->getAddress2(),
+            'address_book_id'   => $contact->getAddressBookId(),
+            'first_name' => $contact->getFirstName(),
+            'last_name' => $contact->getLastName(),
+            'address_1' => $contact->getAddress1(),
+            'address_2' => $contact->getAddress2(),
             'county' => $contact->getCounty(),
             'country' => $contact->getCountry(),
-            'postCode' => $contact->getPostCode(),
-            'homeTel' => $contact->getHomeTel(),
-            'workTel' => $contact->getWorkTel(),
-            'mobileTel' => $contact->getMobileTel(),
+            'post_code' => $contact->getPostCode(),
+            'home_tel' => $contact->getHomeTel(),
+            'work_tel' => $contact->getWorkTel(),
+            'mobile_tel' => $contact->getMobileTel(),
             'fax' => $contact->getFax(),
             'email' => $contact->getEmail()
         );

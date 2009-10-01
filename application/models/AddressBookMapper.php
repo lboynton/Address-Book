@@ -116,4 +116,18 @@ class Default_Model_AddressBookMapper
 
         return $contacts;
     }
+
+    public function findNames()
+    {
+        $addressBooks = $this->fetchAll();
+
+        $names = array();
+
+        foreach($addressBooks as $addressBook)
+        {
+            $names[$addressBook->id] = $addressBook->name;
+        }
+
+        return $names;
+    }
 }

@@ -45,4 +45,9 @@ class Default_Model_AddressBook extends Default_Model_AbstractModel
     {
         return $this->getMapper()->findContacts($id);
     }
+
+    public function getNames()
+    {
+        return $this->getMapper()->findNames();
+    }
 }
