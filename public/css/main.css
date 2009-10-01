@@ -1,6 +1,7 @@
 body
 {
     margin:50px 0;
+    font-size:small;
 }
 #navigation
 {
@@ -14,4 +15,19 @@ body
     text-align:center;
     text-decoration:none;
     margin:0 10px 0 0;
+}
+#contacts
+{
+    margin:20px 0 0 0;
+}
+.contact
+{
+    border:1px solid #000;
+    padding:10px;
+    height:150px;
+    width:150px;
+}
+.contact .name
+{
+    font-size:large;
 }
