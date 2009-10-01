@@ -8,14 +8,14 @@
 
 <div id="contacts">
     <?php foreach ($this->contacts as $contact): ?>
-    <div class="contact">
-        <div class="name">
+    <a href="contact/view/<?php echo $contact->id ?>" class="contact">
+        <span class="name">
                 <?php echo $this->escape($contact->firstName) ?>
                 <?php echo $this->escape($contact->lastName) ?>
-        </div>
-        <div class="homeTel"><?php echo $this->escape($contact->homeTel) ?></div>
-        <div class="workTel"><?php echo $this->escape($contact->workTel) ?></div>
-        <div class="mobileTel"><?php echo $this->escape($contact->mobileTel) ?></div>
-    </div>
+        </span>
+        <span class="homeTel"><?php echo $this->escape($contact->homeTel) ?></span>
+        <span class="workTel"><?php echo $this->escape($contact->workTel) ?></span>
+        <span class="mobileTel"><?php echo $this->escape($contact->mobileTel) ?></span>
+    </a>
     <?php endforeach ?>
 </div>

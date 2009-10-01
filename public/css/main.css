@@ -62,6 +62,10 @@ select
 {
     margin:20px -10px 0 0;
 }
+.contact span
+{
+    display:block;
+}
 .contact
 {
     border:1px solid #000;
@@ -70,6 +74,9 @@ select
     width:160px;
     float:left;
     margin:0 10px 10px 0;
+    display:inline-block;
+    text-decoration:none;
+    color:inherit;
 }
 .contact:last
 {
