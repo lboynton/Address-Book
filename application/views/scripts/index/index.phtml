@@ -19,3 +19,12 @@
     </a>
     <?php endforeach ?>
 </div>
+
+<script type="text/javascript">
+    //<![CDATA[
+    Event.observe('addressbook', 'change', function()
+    {
+        $('address_book_form').submit();
+    });
+    //]]>
+</script>

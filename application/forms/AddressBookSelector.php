@@ -29,7 +29,9 @@ class Default_Form_AddressBookSelector extends Zend_Form
         $this->addElement('submit', 'submit', array(
             'ignore'   => true,
             'label'    => 'View',
-            'decorators'  => array('ViewHelper')
+            'decorators'  => array('ViewHelper', array(array('data'=>'HtmlTag'), array('tag' => 'noscript'))),
         ));
+
+        $this->setName('address_book_form');
     }
 }

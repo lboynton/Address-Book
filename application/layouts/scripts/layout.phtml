@@ -7,7 +7,9 @@
         <?php $this->headLink()->appendStylesheet('/css/blueprint/print.css', 'print'); ?>
         <?php $this->headLink()->appendStylesheet('/css/blueprint/ie.css', 'screen, projection', 'lt IE 8'); ?>
         <?php $this->headLink()->appendStylesheet('/css/main.css', 'screen, projection'); ?>
+        <?php $this->headScript()->prependFile('/js/prototype.js'); ?>
         <?php echo $this->headLink(); ?>
+        <?php echo $this->headScript(); ?>
     </head>
     <body>
         <div id="container" class="container">
