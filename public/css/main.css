@@ -41,7 +41,7 @@ select
 #navigation a
 {
     border:1px solid #000;
-    padding:10px;
+    padding:10px 5px;
     font-size:large;
     text-align:center;
     text-decoration:none;
@@ -50,8 +50,16 @@ select
 #addressBookSelector
 {
     position:absolute;
-    top:50px;
+    top:55px;
     right:0;
+}
+#addressBookSelector .text
+{
+    width:220px;
+}
+#addressBookSelector select
+{
+    width:200px;
 }
 #addressBookSelector *
 {

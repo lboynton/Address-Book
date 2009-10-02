@@ -13,6 +13,7 @@ class IndexController extends Zend_Controller_Action
         $contact = new Default_Model_Contact();
 
         $id = (int) $this->getRequest()->getParam('addressbook');
+        $name = (string) $this->getRequest()->getParam('name');
         
         if($id > 0)
         {
@@ -20,7 +21,7 @@ class IndexController extends Zend_Controller_Action
         }
         else
         {
-            $this->view->contacts = $contact->fetchAll($id);
+            $this->view->contacts = $contact->fetchAll();
         }
 
         $form = new Default_Form_AddressBookSelector();

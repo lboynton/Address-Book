@@ -15,6 +15,12 @@ class Default_Form_AddressBookSelector extends Zend_Form
     {
         $this->setMethod('get');
 
+        $this->addElement('text', 'name', array(
+            'label'      => 'Name',
+            'class'     => 'text',
+            'decorators'  => array('ViewHelper', 'Label')
+        ));
+
         $addressBook = new Default_Model_AddressBook();
         $addressBooks = $addressBook->getNames();
 
