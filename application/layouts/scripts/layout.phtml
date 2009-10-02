@@ -23,11 +23,11 @@
                     array('controller'=>'index'),
                     'default', true) ?>">View Contacts</a>
                 <a href="<?php echo $this->url(
+                    array('controller'=>'addressbook'),
+                    'default', true) ?>">View Address Books</a>
+                <a href="<?php echo $this->url(
                     array('controller'=>'contact', 'action' => 'add'),
                     'default', true) ?>">Add Contact</a>
-                <a href="<?php echo $this->url(
-                    array('controller'=>'addressbook', 'action' => 'add'),
-                    'default', true) ?>">Add Address Book</a>
             </div>
             <div id="content" class="span-24 last">
                 <?php echo $this->layout()->content ?>

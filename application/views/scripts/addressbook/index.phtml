@@ -1,5 +1,18 @@
-<dl>
+<table>
+    <tr>
+        <th>Name</th><th></th>
+    </tr>
     <?php foreach ($this->entries as $entry): ?>
-    <dt><?php echo $this->escape($entry->name) ?></dt>
+    <tr>
+        <td><?php echo $this->escape($entry->name) ?></td>
+        <td>
+            <form action="/addressbook/delete/" method="post">
+                <input type="hidden" name="id" value="<?php echo $this->escape($entry->id) ?>" />
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
     <?php endforeach ?>
-</dl>
+</table>
+
+<p><a href="/addressbook/add">New Address Book</a></p>
