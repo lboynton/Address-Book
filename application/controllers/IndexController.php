@@ -24,6 +24,7 @@ class IndexController extends Zend_Controller_Action
         }
 
         $form = new Default_Form_AddressBookSelector();
+        $form->populate(array('addressbook' => $id));
         $this->view->form = $form;
     }
 }
