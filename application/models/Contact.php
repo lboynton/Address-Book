@@ -33,7 +33,7 @@ class Default_Model_Contact extends Default_Model_AbstractModel
         
         return $this->toArray(array('id', 'firstName', 'lastName', 'address1',
             'address2', 'town', 'county', 'country', 'postCode','homeTel',
-            'workTel', 'mobileTel','fax','email'));
+            'workTel', 'mobileTel','fax','email', 'addressBookId'));
     }
 
     public function setId($id)
