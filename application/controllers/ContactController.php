@@ -7,12 +7,6 @@ class ContactController extends Zend_Controller_Action
         /* Initialize action controller here */
     }
 
-    public function indexAction()
-    {
-        $contact = new Default_Model_Contact();
-        $this->view->entries = $contact->fetchAll();
-    }
-
     public function addAction()
     {
         $request = $this->getRequest();
@@ -24,7 +18,7 @@ class ContactController extends Zend_Controller_Action
             {
                 $model = new Default_Model_Contact($form->getValues());
                 $model->save();
-                return $this->_helper->redirector('index');
+                return $this->_helper->redirector('index', 'index');
             }
         }
 
