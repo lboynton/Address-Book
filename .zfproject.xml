@@ -36,7 +36,6 @@
           <viewControllerScriptsDirectory forControllerName="addressbook">
             <viewScriptFile forActionName="index"/>
           </viewControllerScriptsDirectory>
-          </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="contact">
             <viewScriptFile forActionName="add"/>
           </viewControllerScriptsDirectory>
