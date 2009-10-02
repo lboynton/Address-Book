@@ -82,8 +82,6 @@ select
     width:160px;
     float:left;
     margin:0 10px 10px 0;
-    display:inline-block;
-    text-decoration:none;
     color:inherit;
 }
 .contact .name
