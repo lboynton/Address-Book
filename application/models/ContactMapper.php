@@ -122,4 +122,40 @@ class Default_Model_ContactMapper
         
         return $entries;
     }
+
+    public function findByName($name)
+    {
+        $select  = $this->getDbTable()->select()
+            ->where('CONCAT(first_name, \' \', last_name) LIKE ?', '%'.$name.'%');
+
+        $resultSet = $this->getDbTable()->fetchAll($select);
+        
+        $entries = array();
+
+        foreach ($resultSet as $row)
+        {
+            $entry = new Default_Model_Contact();
+
+            $entry->setId($row->id)
+                ->setAddressBookId($row->address_book_id)
+                ->setFirstName($row->first_name)
+                ->setLastName($row->last_name)
+                ->setAddress1($row->address_1)
+                ->setAddress2($row->address_2)
+                ->setTown($row->town)
+                ->setCounty($row->county)
+                ->setCountry($row->country)
+                ->setPostCode($row->post_code)
+                ->setHomeTel($row->home_tel)
+                ->setWorkTel($row->work_tel)
+                ->setMobileTel($row->mobile_tel)
+                ->setFax($row->fax)
+                ->setEmail($row->email)
+                ->setMapper($this);
+
+            $entries[] = $entry;
+        }
+
+        return $entries;
+    }
 }

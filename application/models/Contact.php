@@ -209,4 +209,9 @@ class Default_Model_Contact extends Default_Model_AbstractModel
         }
         return $this->_mapper;
     }
+
+    public function findByName($name)
+    {
+        return $this->getMapper()->findByName($name);
+    }
 }

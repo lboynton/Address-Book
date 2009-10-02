@@ -24,6 +24,11 @@ class IndexController extends Zend_Controller_Action
             $this->view->contacts = $contact->fetchAll();
         }
 
+        if($name != '')
+        {
+            $this->view->contacts = $contact->findByName($name);
+        }
+
         $form = new Default_Form_AddressBookSelector();
         $form->populate(array('addressbook' => $id));
         $form->populate(array('name' => $name));
