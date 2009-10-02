@@ -9,6 +9,8 @@ class ContactController extends Zend_Controller_Action
 
     public function addAction()
     {
+        $this->view->headTitle('Add Contact');
+
         $request = $this->getRequest();
         $form = new Default_Form_Contact();
 
@@ -48,6 +50,7 @@ class ContactController extends Zend_Controller_Action
             $form->populate($contact->getOptions($id));
         }
 
+        $this->view->headTitle($this->view->escape($contact->getFirstName() . ' ' . $contact->getLastName()));
         $this->view->form = $form;
     }
 }

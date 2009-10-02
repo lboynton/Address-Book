@@ -9,6 +9,7 @@ class AddressbookController extends Zend_Controller_Action
 
     public function indexAction()
     {
+        $this->view->headTitle('Address Books');
         $addressBook = new Default_Model_AddressBook();
         $this->view->entries = $addressBook->fetchAll();
     }
@@ -25,6 +26,7 @@ class AddressbookController extends Zend_Controller_Action
 
     public function addAction()
     {
+        $this->view->headTitle('Add Address Book');
         $request = $this->getRequest();
         $form = new Default_Form_AddressBook();
 

@@ -2,6 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head profile="http://www.w3.org/2005/10/profile">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <?php $this->headTitle('Address Book'); ?>
+        <?php $this->headTitle()->setSeparator(' / '); ?>
         <?php echo $this->headTitle(); ?>
         <?php $this->headLink()->appendStylesheet('/css/blueprint/screen.css', 'screen, projection'); ?>
         <?php $this->headLink()->appendStylesheet('/css/blueprint/print.css', 'print'); ?>
