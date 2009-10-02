@@ -17,6 +17,7 @@ class Default_Model_Contact extends Default_Model_AbstractModel
     protected $_lastName;
     protected $_address1;
     protected $_address2;
+    protected $_town;
     protected $_county;
     protected $_country;
     protected $_postCode;
@@ -89,6 +90,17 @@ class Default_Model_Contact extends Default_Model_AbstractModel
     public function setAddress2($address2)
     {
         $this->_address2 = (string) $address2;
+        return $this;
+    }
+
+    public function getTown()
+    {
+        return $this->_town;
+    }
+
+    public function setTown($town)
+    {
+        $this->_town = (string) $town;
         return $this;
     }
 

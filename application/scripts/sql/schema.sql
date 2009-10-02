@@ -18,6 +18,7 @@ CREATE TABLE contacts
     last_name character varying(255),
     address_1 character varying(255),
     address_2 character varying(255),
+    town character varying(255),
     county character varying(255),
     country character varying(255),
     post_code character varying(10),

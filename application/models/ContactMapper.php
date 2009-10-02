@@ -44,6 +44,7 @@ class Default_Model_ContactMapper
             'last_name' => $contact->getLastName(),
             'address_1' => $contact->getAddress1(),
             'address_2' => $contact->getAddress2(),
+            'town' => $contact->getTown(),
             'county' => $contact->getCounty(),
             'country' => $contact->getCountry(),
             'post_code' => $contact->getPostCode(),
@@ -79,6 +80,7 @@ class Default_Model_ContactMapper
                 ->setLastName($row->last_name)
                 ->setAddress1($row->address_1)
                 ->setAddress2($row->address_2)
+                ->setTown($row->town)
                 ->setCounty($row->county)
                 ->setCountry($row->country)
                 ->setPostCode($row->post_code)
@@ -104,6 +106,7 @@ class Default_Model_ContactMapper
                 ->setLastName($row->last_name)
                 ->setAddress1($row->address_1)
                 ->setAddress2($row->address_2)
+                ->setTown($row->town)
                 ->setCounty($row->county)
                 ->setCountry($row->country)
                 ->setPostCode($row->post_code)

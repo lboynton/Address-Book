@@ -44,6 +44,13 @@ class Default_Form_Contact extends Zend_Form
             'filters'    => array('StringTrim'),
         ));
 
+        $this->addElement('text', 'town', array(
+            'label'      => 'Town/City',
+            'required'   => false,
+            'class'      => 'text',
+            'filters'    => array('StringTrim'),
+        ));
+
         $this->addElement('text', 'county', array(
             'label'      => 'County',
             'required'   => false,
