@@ -14,7 +14,6 @@
         <controllerFile controllerName="error"/>
         <controllerFile controllerName="addressbook">
           <actionMethod actionName="index"/>
-          <actionMethod actionName="view"/>
           <actionMethod actionName="add"/>
         </controllerFile>
         <controllerFile controllerName="contact">
@@ -38,9 +37,6 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="contact">
             <viewScriptFile forActionName="add"/>
-          </viewControllerScriptsDirectory>
-          <viewControllerScriptsDirectory forControllerName="addressbook">
-            <viewScriptFile forActionName="view"/>
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="addressbook">
             <viewScriptFile forActionName="add"/>
