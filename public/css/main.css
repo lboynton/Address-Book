@@ -86,10 +86,6 @@ select
     text-decoration:none;
     color:inherit;
 }
-.contact:last
-{
-    margin-left:0;
-}
 .contact .name
 {
     font-size:large;
