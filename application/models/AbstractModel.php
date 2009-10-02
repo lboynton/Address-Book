@@ -77,6 +77,27 @@ abstract class Default_Model_AbstractModel
         return $this;
     }
 
+    public function toArray($id)
+    {
+        $methods = get_class_methods($this);
+        $this->find($id);
+
+        $options = array();
+
+        foreach($methods as $method)
+        {
+            if(substr($method, 0, 3) == 'get')
+            {
+                $key = substr($method, 3, strlen($method));
+                $key{0} = strtolower($key{0});
+
+                $options[$key] = $this->$method();
+            }
+        }
+
+        return $options;
+    }
+
     public function fetchAll()
     {
         return $this->getMapper()->fetchAll();

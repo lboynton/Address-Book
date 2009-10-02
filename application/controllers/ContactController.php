@@ -39,12 +39,12 @@ class ContactController extends Zend_Controller_Action
             {
                 $model = new Default_Model_Contact($form->getValues());
                 $model->save();
-                return $this->_helper->redirector('index');
+                return $this->_helper->redirector('index', 'index');
             }
         }
         else
         {
-            $form->populate($contact->find($id)->toArray());
+            $form->populate($contact->toArray($id));
         }
 
         $this->view->form = $form;
