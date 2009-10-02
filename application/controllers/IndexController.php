@@ -11,12 +11,19 @@ class IndexController extends Zend_Controller_Action
     {
         $addressBook = new Default_Model_AddressBook();
         $contact = new Default_Model_Contact();
-        
-        $form = new Default_Form_AddressBookSelector();
-        $form->populate(array('name'=>'bob'));
-        foreach($addressBook->fetchAll() as $name)
 
+        $id = (int) $this->getRequest()->getParam('addressbook');
+        
+        if($id > 0)
+        {
+            $this->view->contacts = $addressBook->getContacts($id);
+        }
+        else
+        {
+            $this->view->contacts = $contact->fetchAll($id);
+        }
+
+        $form = new Default_Form_AddressBookSelector();
         $this->view->form = $form;
-        $this->view->contacts = $contact->fetchAll($id);
     }
 }

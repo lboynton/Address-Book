@@ -24,6 +24,8 @@ class Default_Form_AddressBookSelector extends Zend_Form
             'decorators'  => array('ViewHelper')
         ));
 
+        $this->getElement('addressbook')->addMultiOption('0', 'All');
+
         $this->addElement('submit', 'submit', array(
             'ignore'   => true,
             'label'    => 'View',
