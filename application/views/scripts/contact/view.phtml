@@ -1,7 +1,8 @@
 <fieldset>
     <legend>Contact Details</legend>
-<?php
-$this->form->setAction($this->url());
-echo $this->form;
-?>
+    <?php
+    $this->form->setAction($this->url());
+    $this->form->getElement('submit')->setLabel('Save Contact');
+    echo $this->form;
+    ?>
 </fieldset>

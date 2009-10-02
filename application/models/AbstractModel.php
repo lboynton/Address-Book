@@ -58,6 +58,8 @@ abstract class Default_Model_AbstractModel
         return $this;
     }
 
+    public abstract function getOptions($id);
+
     public function setMapper($mapper)
     {
         $this->_mapper = $mapper;
@@ -77,25 +79,23 @@ abstract class Default_Model_AbstractModel
         return $this;
     }
 
-    public function toArray($id)
+    protected function toArray($options)
     {
         $methods = get_class_methods($this);
-        $this->find($id);
 
-        $options = array();
+        $array = array();
 
-        foreach($methods as $method)
+        foreach ($options as $key)
         {
-            if(substr($method, 0, 3) == 'get')
+            $method = 'get' . ucfirst($key);
+            
+            if (in_array($method, $methods))
             {
-                $key = substr($method, 3, strlen($method));
-                $key{0} = strtolower($key{0});
-
-                $options[$key] = $this->$method();
+                $array[$key] = $this->$method();
             }
         }
 
-        return $options;
+        return $array;
     }
 
     public function fetchAll()

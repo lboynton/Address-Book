@@ -38,13 +38,14 @@ class ContactController extends Zend_Controller_Action
             if ($form->isValid($request->getPost()))
             {
                 $model = new Default_Model_Contact($form->getValues());
+                $model->setId($id);
                 $model->save();
                 return $this->_helper->redirector('index', 'index');
             }
         }
         else
         {
-            $form->populate($contact->toArray($id));
+            $form->populate($contact->getOptions($id));
         }
 
         $this->view->form = $form;

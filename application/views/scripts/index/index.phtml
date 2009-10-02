@@ -8,7 +8,7 @@
 
 <div id="contacts">
     <?php foreach ($this->contacts as $contact): ?>
-    <a href="contact/view/<?php echo $contact->id ?>" class="contact">
+    <a href="contact/view/id/<?php echo $contact->id ?>" class="contact">
         <span class="name">
                 <?php echo $this->escape($contact->firstName) ?>
                 <?php echo $this->escape($contact->lastName) ?>

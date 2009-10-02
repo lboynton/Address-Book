@@ -27,6 +27,15 @@ class Default_Model_Contact extends Default_Model_AbstractModel
     protected $_fax;
     protected $_email;
 
+    public function getOptions($id)
+    {
+        $this->find($id);
+        
+        return $this->toArray(array('id', 'firstName', 'lastName', 'address1',
+            'address2', 'town', 'county', 'country', 'postCode','homeTel',
+            'workTel', 'mobileTel','fax','email'));
+    }
+
     public function setId($id)
     {
         $this->_id = (int) $id;
