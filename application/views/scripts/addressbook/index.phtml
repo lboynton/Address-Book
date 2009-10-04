@@ -8,12 +8,16 @@
         <td>
             <noscript>
                 <form action="/addressbook/rename/id/<?php echo $this->escape($entry->id) ?>" method="get">
-                    <input type="submit" value="Rename" />
+                    <p>
+                        <input type="submit" value="Rename" />
+                    </p>
                 </form>
             </noscript>
             <form action="/addressbook/delete" method="post" class="delete">
-                <input type="hidden" name="id" value="<?php echo $this->escape($entry->id) ?>" />
-                <input type="submit" value="Delete" />
+                <p>
+                    <input type="hidden" name="id" value="<?php echo $this->escape($entry->id) ?>" />
+                    <input type="submit" value="Delete" />
+                </p>
             </form>
         </td>
     </tr>
