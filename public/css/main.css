@@ -79,6 +79,15 @@ table form
 {
     margin:0 -10px 0 0;
 }
+#footer
+{
+    text-align:right;
+    font-size:small;
+}
+#footer a
+{
+    color:#777;
+}
 .contact span
 {
     display:block;
@@ -86,7 +95,7 @@ table form
 .contact
 {
     border:1px solid #000;
-    padding:10px;
+    padding:5px 10px 10px 10px;
     height:158px;
     width:160px;
     float:left;
@@ -94,21 +103,56 @@ table form
     color:inherit;
     position:relative;
 }
-.contact .name
-{
-    font-size:large;
-}
 .contact form
 {
     position:absolute;
-    right:10px;
+    right:0;
+    top:0;
 }
 .contact form input
 {
-    border:1px solid #000;
+    border:none;
+    border-bottom:1px solid #000;
+    border-left:1px solid #000;
     background:none;
     width:auto;
     padding:0;
     font-weight:bold;
     cursor:pointer;
+}
+.contact span
+{
+    background-repeat:no-repeat;
+    background-position:0 1px;
+    padding-left:20px;
+    overflow:hidden;
+}
+.contact .name
+{
+    background-image:url(/img/user.png);
+    background-position:0 2px;
+    padding:8px 0 5px 38px;
+    margin:0 0 2px 0;
+    font-size:medium;
+    border-bottom:1px solid #CCC;
+}
+.contact .email
+{
+    background-image:url(/img/email.png);
+}
+.contact .mobileTel
+{
+    background-image:url(/img/phone.png);
+}
+.contact .homeTel
+{
+    background-image:url(/img/house.png);
+}
+.contact .workTel
+{
+    background-image:url(/img/building.png);
+}
+.contact .fax
+{
+    background-image:url(/img/printer.png);
 }

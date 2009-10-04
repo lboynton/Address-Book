@@ -16,14 +16,15 @@
         <span class="name">
             <a href="contact/view/id/<?php echo $this->escape($contact->id) ?>"><?php echo $this->escape($contact->firstName) ?> <?php echo $this->escape($contact->lastName) ?></a>
         </span>
-        <span class="email">Email:
-            <a href="mailto:<?php echo $this->escape($contact->email) ?>">
+        <span class="email">
+            <a href="mailto:<?php echo $this->escape($contact->email) ?>"
+               title="<?php echo $this->escape($contact->email) ?>">
                 <?php echo $this->escape($contact->email) ?></a>
         </span>
-        <span class="homeTel">Home: <?php echo $this->escape($contact->homeTel) ?></span>
-        <span class="workTel">Work: <?php echo $this->escape($contact->workTel) ?></span>
-        <span class="mobileTel">Mobile: <?php echo $this->escape($contact->mobileTel) ?></span>
-        <span class="fax">Fax: <?php echo $this->escape($contact->fax) ?></span>
+        <span class="homeTel"><?php echo $this->escape($contact->homeTel) ?></span>
+        <span class="workTel"><?php echo $this->escape($contact->workTel) ?></span>
+        <span class="mobileTel"><?php echo $this->escape($contact->mobileTel) ?></span>
+        <span class="fax"><?php echo $this->escape($contact->fax) ?></span>
     </div>
     <?php endforeach ?>
 </div>

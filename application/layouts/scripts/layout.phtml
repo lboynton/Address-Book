@@ -21,17 +21,20 @@
             </div>
             <div id="navigation" class="span-24 last">
                 <a href="<?php echo $this->url(
-                    array('controller'=>'index'),
-                    'default', true) ?>">View Contacts</a>
+                array('controller'=>'index'),
+                   'default', true) ?>">View Contacts</a>
                 <a href="<?php echo $this->url(
-                    array('controller'=>'addressbook'),
-                    'default', true) ?>">View Address Books</a>
+                array('controller'=>'addressbook'),
+                   'default', true) ?>">View Address Books</a>
                 <a href="<?php echo $this->url(
-                    array('controller'=>'contact', 'action' => 'add'),
-                    'default', true) ?>">Add Contact</a>
+                array('controller'=>'contact', 'action' => 'add'),
+                   'default', true) ?>">Add Contact</a>
             </div>
             <div id="content" class="span-24 last">
                 <?php echo $this->layout()->content ?>
+            </div>
+            <div id="footer">
+                <p>Icons by <a href="http://www.famfamfam.com/lab/icons/silk/">FamFamFam</a></p>
             </div>
         </div>
     </body>
