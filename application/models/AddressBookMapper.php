@@ -130,4 +130,10 @@ class Default_Model_AddressBookMapper
 
         return $names;
     }
+
+    public function delete($id)
+    {
+        $where = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $id);
+        $this->getDbTable()->delete($where);
+    }
 }

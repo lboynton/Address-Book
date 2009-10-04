@@ -214,9 +214,4 @@ class Default_Model_Contact extends Default_Model_AbstractModel
     {
         return $this->getMapper()->findByName($name);
     }
-
-    public function delete($id)
-    {
-        $this->getMapper()->delete($id);
-    }
 }

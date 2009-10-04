@@ -102,4 +102,9 @@ abstract class Default_Model_AbstractModel
     {
         return $this->getMapper()->fetchAll();
     }
+
+    public function delete($id)
+    {
+        $this->getMapper()->delete($id);
+    }
 }

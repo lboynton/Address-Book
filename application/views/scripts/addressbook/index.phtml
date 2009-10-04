@@ -11,7 +11,7 @@
                     <input type="submit" value="Rename" />
                 </form>
             </noscript>
-            <form action="/addressbook/delete" method="post">
+            <form action="/addressbook/delete" method="post" class="delete">
                 <input type="hidden" name="id" value="<?php echo $this->escape($entry->id) ?>" />
                 <input type="submit" value="Delete" />
             </form>
@@ -31,5 +31,18 @@
             callback: function(form, value) { return 'name=' + encodeURIComponent(value) + '&id=' + encodeURIComponent(<?php echo $this->escape($entry->id) ?>) }
         });
     <?php endforeach ?>
+
+    $$('form.delete').each(function(element)
+    {
+        Event.observe(element, 'submit', function(event)
+        {
+            var check = confirm("Delete address book and all contacts?");
+
+            if(!check)
+            {
+                event.stop();
+            }
+        });
+    });
     //]]>
 </script>

@@ -16,6 +16,7 @@
           <actionMethod actionName="index"/>
           <actionMethod actionName="add"/>
           <actionMethod actionName="rename"/>
+          <actionMethod actionName="delete"/>
         </controllerFile>
         <controllerFile controllerName="contact">
           <actionMethod actionName="add"/>
@@ -51,6 +52,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="addressbook">
             <viewScriptFile forActionName="rename"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="addressbook">
+            <viewScriptFile forActionName="delete"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

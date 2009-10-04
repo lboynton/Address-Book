@@ -70,4 +70,16 @@ class AddressbookController extends Zend_Controller_Action
         $this->view->form = $form;
         $this->view->name = $model->getName();
     }
+
+    public function deleteAction()
+    {
+        if ($this->getRequest()->isPost())
+        {
+            $id = (int) $this->getRequest()->getParam('id');
+            $model = new Default_Model_AddressBook();
+            $model->delete($id);
+        }
+
+        return $this->_helper->redirector('index', 'addressbook');
+    }
 }

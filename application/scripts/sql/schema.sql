@@ -6,14 +6,14 @@ CREATE TABLE address_books
 (
     id serial NOT NULL PRIMARY KEY,
     name character varying(255) NOT NULL
-);
+) ENGINE=INNODB;
 
 DROP TABLE IF EXISTS contacts;
 
 CREATE TABLE contacts
 (
     id serial NOT NULL PRIMARY KEY,
-    address_book_id bigint NOT NULL,
+    address_book_id bigint(20) UNSIGNED NOT NULL,
     first_name character varying(255),
     last_name character varying(255),
     address_1 character varying(255),
@@ -26,5 +26,6 @@ CREATE TABLE contacts
     work_tel character varying(100),
     mobile_tel character varying(100),
     fax character varying(100),
-    email character varying(255)
-);
+    email character varying(255),
+    FOREIGN KEY (address_book_id) REFERENCES address_books(id) ON DELETE CASCADE
+) ENGINE=INNODB;
