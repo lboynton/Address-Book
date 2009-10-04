@@ -15,19 +15,7 @@ class IndexController extends Zend_Controller_Action
         $id = (int) $this->getRequest()->getParam('addressbook');
         $name = (string) $this->getRequest()->getParam('name');
         
-        if($id > 0)
-        {
-            $this->view->contacts = $addressBook->getContacts($id);
-        }
-        else
-        {
-            $this->view->contacts = $contact->fetchAll();
-        }
-
-        if($name != '')
-        {
-            $this->view->contacts = $contact->findByName($name);
-        }
+        $this->view->contacts = $contact->search($name, $id);
 
         $form = new Default_Form_AddressBookSelector();
         $form->populate(array('addressbook' => $id));

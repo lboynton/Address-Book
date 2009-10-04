@@ -123,10 +123,15 @@ class Default_Model_ContactMapper
         return $entries;
     }
 
-    public function findByName($name)
+    public function findByName($name, $addressBook=null)
     {
         $select  = $this->getDbTable()->select()
             ->where('CONCAT(first_name, \' \', last_name) LIKE ?', '%'.$name.'%');
+
+        if($addressBook != null)
+        {
+            $select->where('address_book_id = ?', $addressBook);
+        }
 
         $resultSet = $this->getDbTable()->fetchAll($select);
         

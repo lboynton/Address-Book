@@ -210,8 +210,40 @@ class Default_Model_Contact extends Default_Model_AbstractModel
         return $this->_mapper;
     }
 
-    public function findByName($name)
+    /**
+     * Search for contact
+     * @param string Name of contact to search for
+     * @param int ID of address book to search in
+     * @return array Array of Default_Model_Contact
+     */
+    public function search($name=null, $addressBook=null)
     {
-        return $this->getMapper()->findByName($name);
+        if(isset($addressBook))
+        {
+            if(isset($name))
+            {
+                // search for name and address book
+                return $this->getMapper()->findByName($name, $addressBook);
+            }
+            else
+            {
+                // search for address book
+                $addressBook = new Default_Model_AddressBook();
+                return $addressBook->getContacts($addressBook);
+            }
+        }
+        else
+        {
+            if(isset($name))
+            {
+                // search for name
+                return $this->getMapper()->findByName($name);
+            }
+            else
+            {
+                // search for all contacts
+                return $this->fetchAll();
+            }
+        }
     }
 }
