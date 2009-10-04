@@ -41,7 +41,7 @@ select
 #navigation a
 {
     border:1px solid #000;
-    padding:10px 5px;
+    padding:5px 5px;
     font-size:large;
     text-align:center;
     text-decoration:none;
@@ -55,11 +55,11 @@ select
 }
 #addressBookSelector .text
 {
-    width:220px;
+    width:200px;
 }
 #addressBookSelector select
 {
-    width:200px;
+    width:150px;
 }
 #addressBookSelector *
 {
@@ -83,8 +83,23 @@ select
     float:left;
     margin:0 10px 10px 0;
     color:inherit;
+    position:relative;
 }
 .contact .name
 {
     font-size:large;
+}
+.contact form
+{
+    position:absolute;
+    right:10px;
+}
+.contact form input
+{
+    border:none;
+    background:#000;
+    width:auto;
+    padding:0;
+    color:#FFF;
+    cursor:pointer;
 }
