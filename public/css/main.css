@@ -96,10 +96,10 @@ select
 }
 .contact form input
 {
-    border:none;
-    background:#000;
+    border:1px solid #000;
+    background:none;
     width:auto;
     padding:0;
-    color:#FFF;
+    font-weight:bold;
     cursor:pointer;
 }

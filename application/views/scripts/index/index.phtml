@@ -9,8 +9,12 @@
 <div id="contacts">
     <?php foreach ($this->contacts as $contact): ?>
     <div class="contact">
+        <form action="/contact/delete" method="post">
+            <input type="hidden" name="id" value="<?php echo $this->escape($contact->id) ?>" />
+            <input type="submit" id="submit" value="X" />
+        </form>
         <span class="name">
-            <a href="contact/view/id/<?php echo $contact->id ?>">
+            <a href="contact/view/id/<?php echo $this->escape($contact->id) ?>">
                 <?php echo $this->escape($contact->firstName) ?>
                 <?php echo $this->escape($contact->lastName) ?>
             </a>
@@ -32,6 +36,20 @@
     Event.observe('addressbook', 'change', function()
     {
         $('address_book_form').submit();
+    });
+
+    $$('div.contact').each(function(element)
+    {
+        element.down('input[type=submit]').hide();
+        
+        Event.observe(element, 'mouseover', function()
+        {
+            element.down('input[type=submit]').show();
+        });
+        Event.observe(element, 'mouseout', function()
+        {
+            element.down('input[type=submit]').hide();
+        });
     });
     //]]>
 </script>
