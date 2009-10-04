@@ -14,10 +14,7 @@
             <input type="submit" id="submit" value="X" />
         </form>
         <span class="name">
-            <a href="contact/view/id/<?php echo $this->escape($contact->id) ?>">
-                <?php echo $this->escape($contact->firstName) ?>
-                <?php echo $this->escape($contact->lastName) ?>
-            </a>
+            <a href="contact/view/id/<?php echo $this->escape($contact->id) ?>"><?php echo $this->escape($contact->firstName) ?> <?php echo $this->escape($contact->lastName) ?></a>
         </span>
         <span class="email">Email:
             <a href="mailto:<?php echo $this->escape($contact->email) ?>">
@@ -40,16 +37,35 @@
 
     $$('div.contact').each(function(element)
     {
+        var user = element.down('span.name a').innerHTML;
+
+        // hide delete buton initially
         element.down('input[type=submit]').hide();
-        
+
+        // show delete button when mouseovering a contact
         Event.observe(element, 'mouseover', function()
         {
             element.down('input[type=submit]').show();
         });
+
+        // hide the delete button when mouse leaves contact
         Event.observe(element, 'mouseout', function()
         {
             element.down('input[type=submit]').hide();
         });
+
+        element.down('form')
+        {
+            Event.observe(element, 'submit', function(event)
+            {
+                var check = confirm("Delete " + user + " from address book?");
+
+                if(!check)
+                {
+                    event.stop();
+                }
+            });
+        }
     });
     //]]>
 </script>
