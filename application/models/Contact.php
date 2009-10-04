@@ -218,9 +218,9 @@ class Default_Model_Contact extends Default_Model_AbstractModel
      */
     public function search($name=null, $addressBook=null)
     {
-        if(isset($addressBook))
+        if(isset($addressBook) && !empty($addressBook))
         {
-            if(isset($name))
+            if(isset($name) && !empty($name))
             {
                 // search for name and address book
                 return $this->getMapper()->findByName($name, $addressBook);
@@ -228,13 +228,13 @@ class Default_Model_Contact extends Default_Model_AbstractModel
             else
             {
                 // search for address book
-                $addressBook = new Default_Model_AddressBook();
-                return $addressBook->getContacts($addressBook);
+                $model = new Default_Model_AddressBook();
+                return $model->getContacts($addressBook);
             }
         }
         else
         {
-            if(isset($name))
+            if(isset($name) && !empty($name))
             {
                 // search for name
                 return $this->getMapper()->findByName($name);
