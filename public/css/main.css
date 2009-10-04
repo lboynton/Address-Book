@@ -30,6 +30,15 @@ select
     width:312px;
     padding:4px;
 }
+table p
+{
+    margin:0;
+    padding:2px;
+}
+table form
+{
+    display:inline;
+}
 #container
 {
     position:relative;

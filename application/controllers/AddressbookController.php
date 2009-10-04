@@ -32,4 +32,42 @@ class AddressbookController extends Zend_Controller_Action
 
         $this->view->form = $form;
     }
+
+    public function renameAction()
+    {
+        // disable layout for ajax requests
+        if($this->getRequest()->isXmlHttpRequest())
+        {
+            $this->_helper->layout()->disableLayout();
+            $this->view->ajax = true;
+        }
+
+        $id = (int) $this->getRequest()->getParam('id');
+        $model = new Default_Model_AddressBook();
+        $model->find($id);
+
+        $form = new Default_Form_AddressBook();
+
+        if ($this->getRequest()->isPost())
+        {
+            if ($form->isValid($this->getRequest()->getPost()))
+            {
+                $model->setOptions($form->getValues());
+                $model->setId($id);
+                $model->save();
+
+                if(!$this->getRequest()->isXmlHttpRequest())
+                {
+                    return $this->_helper->redirector('index', 'addressbook');
+                }
+            }
+        }
+        else
+        {
+            $form->populate(array('name' => $model->getName()));
+        }
+
+        $this->view->form = $form;
+        $this->view->name = $model->getName();
+    }
 }

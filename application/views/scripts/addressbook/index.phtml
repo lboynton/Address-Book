@@ -1,18 +1,35 @@
 <table>
     <tr>
-        <th>Name</th><th></th>
+        <th>Name</th><th>Options</th>
     </tr>
     <?php foreach ($this->entries as $entry): ?>
     <tr>
-        <td><?php echo $this->escape($entry->name) ?></td>
+        <td><p id="name-<?php echo $this->escape($entry->id) ?>"><?php echo $this->escape($entry->name) ?></p></td>
         <td>
-            <form action="/addressbook/delete/" method="post">
+            <noscript>
+                <form action="/addressbook/rename/id/<?php echo $this->escape($entry->id) ?>" method="get">
+                    <input type="submit" value="Rename" />
+                </form>
+            </noscript>
+            <form action="/addressbook/delete" method="post">
                 <input type="hidden" name="id" value="<?php echo $this->escape($entry->id) ?>" />
                 <input type="submit" value="Delete" />
             </form>
         </td>
     </tr>
+
     <?php endforeach ?>
 </table>
 
 <p><a href="/addressbook/add">New Address Book</a></p>
+
+<script type="text/javascript">
+    //<![CDATA[
+    <?php foreach ($this->entries as $entry): ?>
+        new Ajax.InPlaceEditor('name-<?php echo $this->escape($entry->id) ?>', '/addressbook/rename',
+        {
+            callback: function(form, value) { return 'name=' + encodeURIComponent(value) + '&id=' + encodeURIComponent(<?php echo $this->escape($entry->id) ?>) }
+        });
+    <?php endforeach ?>
+    //]]>
+</script>

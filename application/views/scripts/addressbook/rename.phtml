@@ -1,0 +1,12 @@
+<?php if($this->ajax): ?>
+<?php echo $this->escape($this->name); ?>
+<?php else: ?>
+<fieldset>
+    <legend>Address Book Details</legend>
+    <?php
+    $this->form->setAction($this->url());
+    $this->form->getElement('submit')->setLabel('Save');
+    echo $this->form;
+    ?>
+</fieldset>
+<?php endif ?>
