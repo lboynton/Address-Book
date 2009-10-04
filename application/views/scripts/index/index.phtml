@@ -5,6 +5,7 @@
     echo $this->form;
     ?>
 </div>
+<div id="autocomplete_choices" class="autocomplete"></div>
 
 <div id="contacts">
     <?php foreach ($this->contacts as $contact): ?>
@@ -70,5 +71,8 @@
             });
         }
     });
+
+    new Ajax.Autocompleter("name", "autocomplete_choices", "/contact/autocomplete");
+
     //]]>
 </script>

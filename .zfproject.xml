@@ -22,6 +22,7 @@
           <actionMethod actionName="add"/>
           <actionMethod actionName="view"/>
           <actionMethod actionName="delete"/>
+          <actionMethod actionName="autocomplete"/>
         </controllerFile>
       </controllersDirectory>
       <layoutsDirectory enabled="false"/>
@@ -55,6 +56,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="addressbook">
             <viewScriptFile forActionName="delete"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="contact">
+            <viewScriptFile forActionName="autocomplete"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

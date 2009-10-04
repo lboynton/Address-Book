@@ -1,0 +1,5 @@
+<ul>
+    <?php foreach($this->contacts as $contact): ?>
+    <li><?php echo $this->escape($contact->firstName) ?> <?php echo $this->escape($contact->lastName) ?><span class="informal"> - <?php echo $this->escape($contact->town) ?>, <?php echo $this->escape($contact->county) ?></span></li>
+    <?php endforeach ?>
+</ul>

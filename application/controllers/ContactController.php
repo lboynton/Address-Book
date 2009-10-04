@@ -65,4 +65,13 @@ class ContactController extends Zend_Controller_Action
 
         return $this->_helper->redirector('index', 'index');
     }
+
+    public function autocompleteAction()
+    {
+        $this->_helper->layout()->disableLayout();
+        $name = (string) $this->getRequest()->getParam('name');
+        $contact = new Default_Model_Contact();
+
+        $this->view->contacts = $contact->search($name);
+    }
 }
