@@ -6,7 +6,7 @@ body
 fieldset
 {
     background:#EEE;
-    margin:20px 0;
+    margin:0;
     border:0;
     padding:10px;
 }
@@ -49,7 +49,7 @@ table form
 }
 #navigation
 {
-    margin:10px 0 30px 0;
+    margin:10px 0 20px 0;
 }
 #navigation a
 {
@@ -138,6 +138,7 @@ div.autocomplete .informal
 {
     text-align:right;
     font-size:small;
+    margin:10px 0 0 0;
 }
 #footer a
 {
