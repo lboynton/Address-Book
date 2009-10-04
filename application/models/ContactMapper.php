@@ -158,4 +158,10 @@ class Default_Model_ContactMapper
 
         return $entries;
     }
+
+    public function delete($id)
+    {
+        $where = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $id);
+        $this->getDbTable()->delete($where);
+    }
 }

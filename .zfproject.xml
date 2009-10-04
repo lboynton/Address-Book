@@ -19,6 +19,7 @@
         <controllerFile controllerName="contact">
           <actionMethod actionName="add"/>
           <actionMethod actionName="view"/>
+          <actionMethod actionName="delete"/>
         </controllerFile>
       </controllersDirectory>
       <layoutsDirectory enabled="false"/>
@@ -43,6 +44,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="contact">
             <viewScriptFile forActionName="view"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="contact">
+            <viewScriptFile forActionName="delete"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

@@ -53,4 +53,16 @@ class ContactController extends Zend_Controller_Action
         $this->view->headTitle($this->view->escape($contact->getFirstName() . ' ' . $contact->getLastName()));
         $this->view->form = $form;
     }
+
+    public function deleteAction()
+    {
+        if ($this->getRequest()->isPost())
+        {
+            $id = (int) $this->getRequest()->getParam('id');
+            $contact = new Default_Model_Contact();
+            $contact->delete($id);
+        }
+
+        return $this->_helper->redirector('index', 'index');
+    }
 }
