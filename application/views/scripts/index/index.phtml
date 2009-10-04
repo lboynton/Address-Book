@@ -10,8 +10,10 @@
     <?php foreach ($this->contacts as $contact): ?>
     <div class="contact">
         <form action="/contact/delete" method="post">
-            <input type="hidden" name="id" value="<?php echo $this->escape($contact->id) ?>" />
-            <input type="submit" id="submit" value="X" />
+            <div>
+                <input type="hidden" name="id" value="<?php echo $this->escape($contact->id) ?>" />
+                <input type="submit" value="X" />
+            </div>
         </form>
         <span class="name">
             <a href="contact/view/id/<?php echo $this->escape($contact->id) ?>"><?php echo $this->escape($contact->firstName) ?> <?php echo $this->escape($contact->lastName) ?></a>
