@@ -18,6 +18,7 @@ class Default_Form_AddressBookSelector extends Zend_Form
         $this->addElement('text', 'name', array(
             'label'      => 'Name',
             'class'     => 'text',
+            'decorators' => array('ViewHelper', 'Label', array(array('data' => 'htmlTag', 'tag' => 'div')))
         ));
 
         $addressBook = new Default_Model_AddressBook();
@@ -26,6 +27,7 @@ class Default_Form_AddressBookSelector extends Zend_Form
         $this->addElement('select', 'addressbook', array(
             'multiOptions' => $addressBooks,
             'label'      => false,
+            'decorators' => array('ViewHelper', array(array('data' => 'htmlTag', 'tag' => 'div')))
         ));
 
         $this->getElement('addressbook')->addMultiOption('0', 'All');
@@ -33,9 +35,12 @@ class Default_Form_AddressBookSelector extends Zend_Form
         $this->addElement('submit', 'submit-button', array(
             'ignore'   => true,
             'label'    => 'View',
-            'class'     => 'submit'
+            'class'     => 'submit',
+            'decorators' => array('ViewHelper', array(array('data' => 'htmlTag', 'tag' => 'div')))
         ));
 
         $this->setName('address_book_form');
+
+        $this->setDecorators(array('FormElements', 'Form'));
     }
 }

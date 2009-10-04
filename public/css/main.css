@@ -65,7 +65,7 @@ table form
     top:55px;
     right:0;
 }
-#addressBookSelector dd, #addressBookSelector dt
+#addressBookSelector div
 {
     display:inline;
     width:60px;
@@ -81,6 +81,7 @@ table form
 #addressBookSelector .submit
 {
     border:1px solid #CCC;
+    background:#EEE;
     padding:4px 2px;
 }
 #addressBookSelector *
@@ -171,10 +172,12 @@ div.autocomplete .informal
     border-left:1px solid #999;
     background:none;
     width:auto;
-    padding:0;
+    padding:1px 2px;
+    margin:0;
     font-weight:bold;
     cursor:pointer;
     color:#666;
+    font-size:14px;
 }
 .contact form input:hover
 {
