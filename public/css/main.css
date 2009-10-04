@@ -35,6 +35,10 @@ table p
     margin:0;
     padding:2px;
 }
+table div
+{
+    display:inline;
+}
 table form
 {
     display:inline;
