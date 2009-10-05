@@ -1,5 +1,6 @@
 -- creates the database tables
 
+DROP TABLE IF EXISTS contacts;
 DROP TABLE IF EXISTS address_books;
 
 CREATE TABLE address_books
@@ -7,8 +8,6 @@ CREATE TABLE address_books
     id serial NOT NULL PRIMARY KEY,
     name character varying(255) NOT NULL
 ) ENGINE=INNODB;
-
-DROP TABLE IF EXISTS contacts;
 
 CREATE TABLE contacts
 (
