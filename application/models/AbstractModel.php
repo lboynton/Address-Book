@@ -15,6 +15,7 @@
 abstract class Default_Model_AbstractModel
 {
     protected $_mapper;
+    protected $_id;
     
     public function __construct(array $options = null)
     {
@@ -59,6 +60,17 @@ abstract class Default_Model_AbstractModel
     }
 
     public abstract function getOptions($id);
+
+    public function setId($id)
+    {
+        $this->_id = (int) $id;
+        return $this;
+    }
+
+    public function getId()
+    {
+        return $this->_id;
+    }
 
     public function setMapper($mapper)
     {

@@ -9,24 +9,8 @@
  *
  * @author Lee Boynton
  */
-class Default_Model_AddressBookMapper
+class Default_Model_AddressBookMapper extends Default_Model_AbstractMapper
 {
-    protected $_dbTable;
-
-    public function setDbTable($dbTable)
-    {
-        if (is_string($dbTable))
-        {
-            $dbTable = new $dbTable();
-        }
-        if (!$dbTable instanceof Zend_Db_Table_Abstract)
-        {
-            throw new Exception('Invalid table data gateway provided');
-        }
-        $this->_dbTable = $dbTable;
-        return $this;
-    }
-
     public function getDbTable()
     {
         if (null === $this->_dbTable)
@@ -38,31 +22,18 @@ class Default_Model_AddressBookMapper
 
     public function save(Default_Model_AddressBook $addressBook)
     {
-        $data = array(
+        $this->_data = array(
             'name'   => $addressBook->getName()
         );
 
-        if (null === ($id = $addressBook->getId()))
-        {
-            unset($data['id']);
-            $this->getDbTable()->insert($data);
-        }
-        else
-        {
-            $this->getDbTable()->update($data, array('id = ?' => $id));
-        }
+        parent::save($addressBook);
     }
 
     public function find($id, Default_Model_AddressBook $addressBook)
     {
-        $result = $this->getDbTable()->find($id);
-        if (0 == count($result))
-        {
-            return;
-        }
-        $row = $result->current();
-        $addressBook->setId($row->id)
-            ->setName($row->name);
+        $row = parent::find($id, $addressBook);
+
+        $addressBook->setName($row->name);
     }
 
     public function fetchAll()
@@ -129,11 +100,5 @@ class Default_Model_AddressBookMapper
         }
 
         return $names;
-    }
-
-    public function delete($id)
-    {
-        $where = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $id);
-        $this->getDbTable()->delete($where);
     }
 }

@@ -7,24 +7,12 @@
  */
 class Default_Model_AddressBook extends Default_Model_AbstractModel
 {
-    protected $_id;
     protected $_name;
 
     public function getOptions($id)
     {
         $this->find($id);
         return $this->toArray(array('id', 'name'));
-    }
-
-    public function setId($id)
-    {
-        $this->_id = (int) $id;
-        return $this;
-    }
-
-    public function getId()
-    {
-        return $this->_id;
     }
 
     public function setName($name)

@@ -9,24 +9,8 @@
  *
  * @author Lee Boynton
  */
-class Default_Model_ContactMapper
+class Default_Model_ContactMapper extends Default_Model_AbstractMapper
 {
-    protected $_dbTable;
-
-    public function setDbTable($dbTable)
-    {
-        if (is_string($dbTable))
-        {
-            $dbTable = new $dbTable();
-        }
-        if (!$dbTable instanceof Zend_Db_Table_Abstract)
-        {
-            throw new Exception('Invalid table data gateway provided');
-        }
-        $this->_dbTable = $dbTable;
-        return $this;
-    }
-
     public function getDbTable()
     {
         if (null === $this->_dbTable)
@@ -38,7 +22,7 @@ class Default_Model_ContactMapper
 
     public function save(Default_Model_Contact $contact)
     {
-        $data = array(
+        $this->_data = array(
             'address_book_id'   => $contact->getAddressBookId(),
             'first_name' => $contact->getFirstName(),
             'last_name' => $contact->getLastName(),
@@ -55,27 +39,14 @@ class Default_Model_ContactMapper
             'email' => $contact->getEmail()
         );
 
-        if (null === ($id = $contact->getId()))
-        {
-            unset($data['id']);
-            $this->getDbTable()->insert($data);
-        }
-        else
-        {
-            $this->getDbTable()->update($data, array('id = ?' => $id));
-        }
+        parent::save($contact);
     }
 
     public function find($id, Default_Model_Contact $contact)
     {
-        $result = $this->getDbTable()->find($id);
-        if (0 == count($result))
-        {
-            return;
-        }
-        $row = $result->current();
-        $contact->setId($row->id)
-                ->setAddressBookId($row->address_book_id)
+        $row = parent::find($id, $contact);
+
+        $contact->setAddressBookId($row->address_book_id)
                 ->setFirstName($row->first_name)
                 ->setLastName($row->last_name)
                 ->setAddress1($row->address_1)
@@ -162,11 +133,5 @@ class Default_Model_ContactMapper
         }
 
         return $entries;
-    }
-
-    public function delete($id)
-    {
-        $where = $this->getDbTable()->getAdapter()->quoteInto('id = ?', $id);
-        $this->getDbTable()->delete($where);
     }
 }
